@@ -1,0 +1,15 @@
+img {
+    width: 30vw;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
