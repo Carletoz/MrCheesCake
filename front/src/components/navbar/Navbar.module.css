@@ -1,5 +1,5 @@
-img {
-    width: 30vw;
+.banner{
+    width: 100vw;
 }
 
 .logo{
@@ -7,9 +7,25 @@ img {
     justify-content: center;
     align-items: center;
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    background: linear-gradient(to bottom, rgb(255, 122, 122), #eeeeee); /* Cambiado a gradiente vertical */
+}
+
+.logo {
+    width: 30vw;
+}
+
+.carroIcon{
+    width: 10vw;
+}
 
 .links{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-block: 2rem;
 }
