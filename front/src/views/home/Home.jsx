@@ -1,10 +1,11 @@
-import Card from "../components/card/Card";
-import Navbar from "../components/navbar/Navbar";
+import Card from "../../components/card/Card";  
+import banner2 from "../../assets/postreZanahoria2.png";
+import styles from "../../components/navbar/navbar.module.css";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
+      <img className={styles.banner} src={banner2} alt="logo" />
       <div
         className="cardContainer"
         style={{

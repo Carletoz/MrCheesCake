@@ -1,5 +1,7 @@
 .banner{
     width: 100vw;
+    height: 30vh;
+    object-fit: fill;
 }
 
 .logo{

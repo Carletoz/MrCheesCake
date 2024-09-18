@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 import banner from "../../assets/banner.png";
+import banner2 from "../../assets/postreZanahoria2.png";
 import carroIcon from "../../assets/carroIcon.png";
 import carroIcon2 from "../../assets/carroIcon2.png";
 import logo1 from "../../assets/logo1.png";
@@ -17,7 +18,6 @@ const Navbar = () => {
         <span>Ubicacion</span>
         <span>Trabaja con nosotros</span>
       </div>
-      <img className={styles.banner} src={banner} alt="logo" />
     </div>
   );
 };
