@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -30,6 +30,7 @@ body {
 
 main {
   display: block;
+  flex: 1;
 }
 
 /**
@@ -174,7 +175,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +186,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -348,6 +351,22 @@ template {
   display: none;
 }
 
-body{
-  background-color:#eeeeee;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
 }

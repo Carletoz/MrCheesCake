@@ -1,14 +1,23 @@
-import postre from "../../assets/postreOreo.png";
 import styles from "./card.module.css";
 
-const Card = () => {
+const Card = ({ dessert, handleOnClickDetails }) => {
+  const { name, category, price, image, id } = dessert;
   return (
-    <div className={styles.card}>
-      <img className={styles.cardImg} src={postre} alt="postre" />
-      <h3>Cheesecake Oreo</h3>
-      <span>descripcion</span>
-      <span>$15.000</span>
-      <button>Agregar al carrito</button>
+    <div className={styles.card} onClick={() => handleOnClickDetails(id)}>
+      <img className={styles.cardImg} src={image} alt={name} />
+      <div className={styles.cardInfo}>
+        <p className={styles.cardName}>{name}</p>
+        <span className={styles.cardPrice}>{price}</span>
+        {/*
+         <button
+         
+         className={styles.cardButton}
+         onClick={() => handleOnClickDetails(id)}
+         >
+          Ver Producto
+        </button>
+       */}
+      </div>
     </div>
   );
 };

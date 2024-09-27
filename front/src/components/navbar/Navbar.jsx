@@ -5,13 +5,17 @@ import carroIcon from "../../assets/carroIcon.png";
 import carroIcon2 from "../../assets/carroIcon2.png";
 import logo1 from "../../assets/logo1.png";
 import styles from "./navbar.module.css";
-
+import { CgShoppingCart } from "react-icons/cg";
+import BurgerMenu from "../burgerMenu/BurgerMenu";
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.header}>
+      <BurgerMenu />
         <img className={styles.logo} src={logo} alt="logo" />
-        <img className={styles.carroIcon} src={carroIcon2} alt="carro" />
+        <span>
+          <CgShoppingCart  />
+        </span>
       </div>
       <div className={styles.links}>
         <span>Pide a domicilio</span>

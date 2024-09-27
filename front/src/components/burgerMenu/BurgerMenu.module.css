@@ -1,0 +1,67 @@
+.burgerMenu {
+  position: relative;
+}
+
+.burgerButton {
+  background: none;
+  border: 2px solid black; /* Añadido borde para visibilidad */
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  padding: 0.625rem; /* 10px a rem */
+}
+
+.burgerButton div {
+  width: 1.5625rem; /* 25px a rem */
+  height: 0.1875rem; /* 3px a rem */
+  background-color: black; /* Asegurarse de que las líneas sean visibles */
+  margin: 0.3125rem 0; /* 5px a rem */
+  border-radius: 0.125rem; /* 2px a rem */
+  transition: 0.5s;
+  transform-origin: left;
+}
+
+.burgerButton:hover div:first-child {
+  transform: rotate(40deg);
+}
+
+.burgerButton:hover div:nth-child(2) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.burgerButton:hover div:nth-child(3) {
+  transform: rotate(-40deg);
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.menu a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
