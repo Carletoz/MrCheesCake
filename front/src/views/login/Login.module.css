@@ -6,7 +6,7 @@
   margin-bottom: 5rem;
 }
 
-form, .form {
+form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -16,19 +16,18 @@ label {
   font-weight: bold;
 }
 
-input, button {
+input {
   padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-input {
-  border: 1px solid #ccc;
-}
-
 button {
+  padding: 0.5rem;
   background-color: #007bff;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -36,6 +35,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-.login > p, .form > p > a, .login > p > a {
-  text-decoration: none;
+.login p {
+  color: red;
+  font-size: 1rem;
 }
