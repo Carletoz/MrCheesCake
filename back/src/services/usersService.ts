@@ -1,49 +1,32 @@
-import { Credential } from "../entities/Credentials";
-import { User } from "../entities/User";
-import ICreateUserDto from "../interfaces/ICreateUserDto";
+import ICreateUserDto from "../dto/createUserDto";
+import IUser from "../interfaces/IUsers";
 
-import { userModel } from "../repositories";
-import { createCredential } from "./credentialsService";
+let users: IUser[] = [];
 
-export const getAllUsersSerive = async (): Promise<User[]> => {
-  const allUsers: User[] = await userModel.find({
-    relations: { appointments: true },
-  });
-  return allUsers;
+let id = 1;
+
+export const getUsersService = async (): Promise<IUser[]> => {
+  return users;
 };
 
-export const getUserByIdService = async (id: number): Promise<User | null> => {
-  const user: User | null = await userModel.findOne({
-    where: { id },
-    relations: ["appointments"], /////////////////OJO
-  });
-  if (!user) throw new Error("Usuario no encontrado");
-  return user;
-};
+export const createUserService = async (
+  user: ICreateUserDto
+): Promise<IUser> => {
+  const newUser = {
+    id,
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    phone: user.phone,
+    address: user.address,
+    image: user.image,
+  };
 
-export const createUserService = async (createUSerDto: ICreateUserDto) => {
-  //Crear usuario
-  const newUser: User = await userModel.create(createUSerDto);
-  await userModel.save(newUser);
-
-  //creamos credencial
-  const newCredential: Credential = await createCredential({
-    username: createUSerDto.username,
-    password: createUSerDto.password,
-  });
-
-  //Asociar newUser con newCredential
-  newUser.credential = newCredential;
-  await userModel.save(newUser);
-
+  users.push(newUser);
+  id++;
   return newUser;
 };
 
-export const findUserByCredentialId = async (credentialId: number) => {
-  const user: User | null = await userModel.findOneBy({
-    credential: { id: credentialId },
-  });
-  // verificar si no existe usuario
-  if (!user) throw new Error("Usuario no encontrado");
-  return user;
+export const deleteUserService = async (id: number): Promise<void> => {
+  users = users.filter((user) => user.id !== id);
 };
