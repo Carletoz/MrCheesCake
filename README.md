@@ -1,2 +1,2 @@
 # MrCheesCake
-Desserts page with: JS React and PostgresSQL
+Desserts e-commerce page with: Typescript React and PostgresSQL
