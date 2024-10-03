@@ -1,7 +1,17 @@
 import ICreateUserDto from "../dto/createUserDto";
 import IUser from "../interfaces/IUsers";
 
-let users: IUser[] = [];
+let users: IUser[] = [
+  {
+    id: 1,
+    name: "John Doe",
+    email: "john.doe@example.com",
+    password: "securepassword123",
+    phone: 1234567890,
+    address: "123 Main St, Anytown, USA",
+    image: "https://example.com/image.jpg",
+  },
+];
 
 let id = 1;
 
